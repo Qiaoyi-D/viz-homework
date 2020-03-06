@@ -1,0 +1,40 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+df = pd.wdbc.data(breast-cancer/wdbc.data
+                sep='\s+',
+                 header=None)
+plt.figure(1)
+plt.figure(2)
+
+df.columns =['radius','texture','perimeter','area','smoothness','compactness','concavity','concave points','symmetry','fractal dimension']
+axes(1) = plt.subplots(1, 1, figsize=(5, 5))
+
+axes.scatter(df['concavity'], df['concave points'], s=10, label='concave points', color='green', marker='^')
+axes.set_title('Concave points vs Concavity')
+axes.set_xlabel('Concavity')
+axes.set_ylabel('Concave points')
+axes.legend()
+
+os.makedirs('plots/6-matplotlib_with_datasets', exist_ok=True)
+plt.savefig('plots/6-matplotlib_with_datasets/wdbc_Concave points_Concavity_scatter.png', dpi=300)
+
+plt.close()
+
+df.columns =['radius','texture','perimeter','area','smoothness','compactness','concavity','concave points','symmetry','fractal dimension']
+axes(1) = plt.subplots(1, 1, figsize=(5, 5))
+
+axes.scatter(df['concavity'], df['texture'], alpha=0.7, label='Texture')
+axes.scatter(df['concavity'], df['area'], alpha=0.7, label='Area')
+axes.scatter(df['concavity'], df['smoothness'], alpha=0.7, label='Smoothness')
+
+
+axes.set_xlabel('Concavity')
+axes.set_ylabel('Texture/ Area')
+axes.set_title(f'Cancer apparence comparisons')
+axes.legend()
+
+os.makedirs('plots/7-matplotlib_with_datasets', exist_ok=True)
+plt.savefig('plots/7-matplotlib_with_datasets/wdbc_Concavity_multiplot_scatter.png', dpi=300)
+
+plt.close()
